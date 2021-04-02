@@ -1,14 +1,14 @@
 class Particle {
     // Particle class
 
-    constructor(xPos, yPos, xVel, yVel) {
+    constructor(xPos, yPos, xVel, yVel, color) {
         // Constructor function. Gets called once, when the particle is created.
         // Assigns values to the particle objects attributes
         this.pos = {
             x: xPos,
             y: yPos
         }
-        this.color = "rgb(255, 255, 255)"
+        this.color = color
         this.radius = 2
         this.vel = {
             x: xVel,
