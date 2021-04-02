@@ -5,17 +5,27 @@ var myInterval
 const particleCount = 50
 let particles = []
 
+const colorPalette = [
+    [127,255,212],
+    [230,230,250],
+    [144,238,144],
+    [255,192,203],
+    [255,250,205]
+]
+
 const createParticles = (n) => {
     // Function for creating n particles
     for (let i = 0; i < n; i++) {
         xDir = Math.random() * 2 - 1
         yDir = Math.random() * 2 - 1
+        const colorArray = colorPalette[Math.floor(Math.random() * colorPalette.length)]
         particles.push(
             new Particle(
                 canv.width * 0.5,
                 canv.height * 0.5,
                 xDir,
-                yDir
+                yDir,
+                colorArray
             )
         )
     }
