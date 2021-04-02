@@ -1,5 +1,9 @@
 class Particle {
+    // Particle class
+
     constructor(xPos, yPos, xVel, yVel) {
+        // Constructor function. Gets called once, when the particle is created.
+        // Assigns values to the particle objects attributes
         this.pos = {
             x: xPos,
             y: yPos
@@ -13,6 +17,7 @@ class Particle {
     }
 
     show() {
+        // Draws the particle:
         ctx.beginPath()
         ctx.fillStyle = this.color
         ctx.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI)
@@ -20,6 +25,7 @@ class Particle {
     }
 
     update() {
+        // Updates the particles position:
         this.pos.x += this.vel.x
         this.pos.y += this.vel.y
     }

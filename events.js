@@ -1,3 +1,4 @@
+// Mapping key codes to actions:
 const keyPush = (evt) => {
     switch(evt.keyCode) {
         //LEFT:

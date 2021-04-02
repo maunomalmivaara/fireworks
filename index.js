@@ -6,6 +6,7 @@ const particleCount = 100
 let particles = []
 
 const createParticles = (n) => {
+    // Function for creating n particles
     for (let i = 0; i < n; i++) {
         xDir = Math.random() * 2 - 1
         yDir = Math.random() * 2 - 1
@@ -25,12 +26,12 @@ const drawBackground = () => {
     ctx.fillRect(0, 0, canv.width, canv.height)
 }
 
-//p = new Particle(canv.width*0.5, canv.height * 0.5)
-
+// Gets called once in the start:
 const setup = () => {
     createParticles(particleCount)
 }
 
+// Gets called over and over again:
 const draw = () => {
     drawBackground()
     for (let particle of particles) {
@@ -40,6 +41,7 @@ const draw = () => {
     }
 }
 
+// Is called once documents are ready:
 $(document).ready(() => {
     "use strict"
     document.addEventListener("keydown", keyPush)
