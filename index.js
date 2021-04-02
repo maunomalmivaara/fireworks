@@ -2,7 +2,7 @@ const canv = document.getElementById("gc")
 const ctx = canv.getContext("2d")
 var myInterval
 
-const particleCount = 100
+const particleCount = 50
 let particles = []
 
 const createParticles = (n) => {
@@ -35,7 +35,6 @@ const setup = () => {
 const draw = () => {
     drawBackground()
     for (let particle of particles) {
-        console.log("particle:", particle)
         particle.update()
         particle.show()
     }

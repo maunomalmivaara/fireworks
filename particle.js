@@ -8,7 +8,8 @@ class Particle {
             x: xPos,
             y: yPos
         }
-        this.color = "rgb(255, 255, 255)"
+        this.alpha = 1.0
+        this.color = `rgba(255, 255, 255, ${this.alpha})`
         this.radius = 2
         this.vel = {
             x: xVel,
@@ -25,8 +26,18 @@ class Particle {
     }
 
     update() {
+        this.updatePosition()
+        this.updateColor()
+    }
+
+    updatePosition() {
         // Updates the particles position:
         this.pos.x += this.vel.x
         this.pos.y += this.vel.y
+    }
+
+    updateColor() {
+        this.alpha *= 0.98
+        this.color = `rgba(255, 255, 255, ${this.alpha})`
     }
 }
